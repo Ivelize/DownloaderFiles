@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 #
-# This program does a Google search for "quick and dirty" and returns
-# 50 results.
+# Script to download spreadsheets from web
 #
 import optparse
 import sys
@@ -51,9 +50,6 @@ def main():
             queue.put((url, filename))
             #urllib.request.urlretrieve(principal)
 
-
-    # if we get here, stdin has gotten the ^D
-    print("Finishing current downloads... Please wait.")
     for i in range(5):
 	    queue.put((None, None))
 
@@ -62,4 +58,4 @@ if __name__ == "__main__":
     queue = Queue()
     threads = []
     main()
-    print("Fim!")
+    
